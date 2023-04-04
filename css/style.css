@@ -1,0 +1,39 @@
+.body {
+  width: 300px;
+  height: 500px;
+  background-color: aquamarine;
+  height: 100vh;
+  position: relative;
+}
+
+.add-button {
+  position: fixed;
+  bottom: 10%;
+  right: 10%;
+  z-index: 3;
+}
+
+.check-button {
+  position: fixed;
+  bottom: 10%;
+  right: 10%;
+  z-index: 4;
+}
+
+.list-note {
+  background-color: grey;
+  padding: 2rem;
+}
+
+.notes-mobile {
+  /* overflow-y: scroll; */
+}
+
+.write-note {
+  position: absolute;
+  background-color: aqua;
+  height: 300px;
+  width: 100%;
+  bottom: 0px;
+  z-index: 2;
+}
