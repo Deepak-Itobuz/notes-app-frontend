@@ -33,24 +33,46 @@
 
     <section class="notes-mobile px-4">
       <div><span class="note-count">0</span> Notes</div>
-      <ul class="notes d-flex flex-column gap-3 list-unstyled">
-        <!-- <li class="list-note">man</li>
-        <li class="list-note">man</li>
-        <li class="list-note">man</li> -->
+      <ul class="notes d-flex flex-column gap-3 list-unstyled" >
+        <!-- <li class="list-note ">
+          <p>mytext</p>
+         <div class="d-flex">
+          <button class="edit-button"><i class="fas fa-solid fa-pen"></i></button>
+          <button class="delete-button"><i class="fas fa-solid fa-trash"></i></button>
+         </div>
+        </li> -->
       </ul>
-      <button class="add-button bg-warning">
+      <button
+        class="add-button bg-warning border rounded-circle fs-3 px-2 text-white"
+      >
         <i class="add-icon fas fa-solid fa-plus"></i>
-        <i class="check-icon fas fa-solid fa-check d-none"></i>
+      </button>
+      <button
+        class="check-button bg-warning border rounded-circle fs-3 px-2 text-white d-none"
+      >
+        <i class="check-icon fas fa-solid fa-check"></i>
+      </button>
+      <button class="close-button rounded-circle bg-danger px-2 d-none">
+        <i class="fs-3 fas fa-regular fa-xmark"></i>
       </button>
     </section>
 
-    <section class="write-note d-none">
+    <section class=" ">
       <textarea
         name="input-note"
         id=""
         cols="30"
         rows="10"
-        class="h-100 w-100"
+        class="write-note d-none h-100 w-100 fs-3 p-5"
+        placeholder="Add your note here..."
+      ></textarea>
+      <textarea
+        name="input-note"
+        id=""
+        cols="30"
+        rows="10"
+        class="edit-note d-none h-100 w-100 fs-3 p-5"
+        placeholder="Add your note here..."
       ></textarea>
     </section>
 
