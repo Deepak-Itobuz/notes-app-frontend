@@ -10,6 +10,7 @@ const editInput = document.querySelector(".edit-note");
 const notesBox = document.querySelector(".notes");
 const notesCount = document.querySelector(".note-count");
 const listNote = document.querySelector(".note-count");
+const statusBar = document.querySelector(".status");
 
 async function get() {
   let i = 0;
@@ -63,7 +64,8 @@ async function postData() {
         return data.json();
       })
       .catch((err) => console.log(err));
-    console.log(response[0].message);
+    // console.log(response[0].message);
+    statusBar.innerHTML = response[0].message
   }
   else
     alert("field cannot be empty")
@@ -87,7 +89,8 @@ async function deleteData(data) {
       return data.json();
     })
     .catch((err) => console.log(err));
-  console.log(response[0].message);
+  // console.log(response[0].message);
+  statusBar.innerHTML = response[0].message;
   notesBox.innerHTML = "";
   get();
 }
@@ -105,7 +108,8 @@ async function updateData(oldData, newData) {
       return data.json();
     })
     .catch((err) => console.log(err));
-  console.log(response[0].message);
+  // console.log(response[0].message);
+  statusBar.innerHTML = response[0].message
   notesBox.innerHTML = "";
   get();
 }
@@ -139,6 +143,7 @@ notesBox.addEventListener('click', (e) => {
     editInput.classList.remove('d-none');
     closeBtn.classList.remove('d-none');
     saveBtn.classList.remove('d-none');
+    addBtn.classList.add('d-none');
     editInput.value = e.target.textContent;
     let oldValue = e.target.textContent;
     saveBtn.onclick = async() =>{
