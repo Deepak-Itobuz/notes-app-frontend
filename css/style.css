@@ -1,7 +1,5 @@
 body {
-  /* height: 1600px; */
   height: 100vh;
-  /* position: relative; */
   background-color: #4a4e69;
 }
 
@@ -100,31 +98,21 @@ textarea {
 }
 
 .notes-mobile {
-  /* background-color: rgb(142, 231, 210); */
-  /* background-color: #54b3d6; */
   height: 100%;
   overflow-y: scroll;
 
 }
 
-
-
-
 .write-note {
   position: absolute;
   background-color: whitesmoke;
-  /* bottom: 0px */
   z-index: 2;
 }
 
 .edit-note {
   position: absolute;
   background-color: whitesmoke;
-
-
-  /* bottom: 0px; */
   z-index: 2;
-  /* margin: auto; */
 }
 
 .list-note button {
@@ -137,20 +125,12 @@ textarea {
   transition: 0.8s;
 }
 
-/* .list-note {
-  } */
-/* a:hover {
-  box-shadow: inset 100px 0 0 0 #54b3d6;
-  color: white;
-} */
-
 .delete-button {
   color: #ffffff;
   background-color: #22223b;
 }
 
 .delete-button:hover {
-
   background-color: #ffffff;
     color: #22223b;
 

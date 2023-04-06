@@ -16,7 +16,6 @@ async function get() {
   let i = 0;
   const response = await fetch("http://127.0.0.1:8085")
     .then((data) => {
-      // console.log(data);
       return data.json();
     })
     .catch((err) => console.log(err));
@@ -35,7 +34,7 @@ async function get() {
     notesBox.appendChild(oldNote);
     i++;
     notesCount.innerHTML = i;
-    }
+  }
 };
 
 async function add() {
@@ -146,7 +145,7 @@ notesBox.addEventListener('click', (e) => {
     addBtn.classList.add('d-none');
     editInput.value = e.target.textContent;
     let oldValue = e.target.textContent;
-    saveBtn.onclick = async() =>{
+    saveBtn.onclick = async () => {
       let newValue = editInput.value;
       await updateData(oldValue, newValue)
       editInput.classList.add('d-none');
