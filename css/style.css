@@ -2,22 +2,28 @@ body {
   /* height: 1600px; */
   height: 100vh;
   /* position: relative; */
-  background-color: #54b3d6;
+  background-color: #4a4e69;
 }
 
+nav{
+  background-color: #22223b;
+}
 .add-button {
   position: fixed;
   bottom: 10%;
   left: 82%;
   z-index: 3;
+  color:  #22223b;
+  background-color: #ffffff ;
 }
 
 textarea {
   border-radius: 3mm;
-  box-shadow: 3px 3px 10px black;
+  box-shadow: 3px 3px 10px #22223b;
 }
 
 .note-number {
+  color: white;
   font-weight: 700;
 }
 
@@ -26,6 +32,7 @@ textarea {
   top: 85%;
   left: 82%;
   z-index: 4;
+  background-color: #22223b;
 }
 
 .save-button {
@@ -33,6 +40,7 @@ textarea {
   top: 85%;
   left: 82%;
   z-index: 3;
+  background-color: #22223b;
 }
 
 .save-button:hover ,.close-button:hover ,.check-button:hover , .add-button:hover  {
@@ -45,6 +53,8 @@ textarea {
   top: 10%;
   left: 82%;
   z-index: 3;
+  background-color: #22223b;
+  color: #fff;
 }
 
 .list-note {
@@ -54,24 +64,39 @@ textarea {
   justify-content: space-between;
   align-items: center;
   border-radius: 3mm;
-  box-shadow: inset 0 0 0 0 #54b3d6;
+  box-shadow: inset 0 0 0 0 #4a4e69;
   transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
-
+  max-height: 150px;
+  gap:1rem
 }
 
+.list-note p {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  overflow: scroll;
+  margin: 0;
+}
+
+
 .list-note:hover {
-  background-color: #54b3d6;
+  background-color: #4a4e69;
   color: white;
   scale: 1.02;
   transition: 0.8s;
-  box-shadow: inset 800px 0 0 0 black;
+  box-shadow: inset 800px 0 0 0 #22223b;
   color: white;
+}
+
+.list-note:hover::before {
+  content: "Edit";
 }
 
 .notes{
   background: transparent;
   padding: 2rem;
   display: flex;
+  font-weight: 600;
 }
 
 .notes-mobile {
@@ -81,6 +106,7 @@ textarea {
   overflow-y: scroll;
 
 }
+
 
 
 
@@ -117,3 +143,15 @@ textarea {
   box-shadow: inset 100px 0 0 0 #54b3d6;
   color: white;
 } */
+
+.delete-button {
+  color: #ffffff;
+  background-color: #22223b;
+}
+
+.delete-button:hover {
+
+  background-color: #ffffff;
+    color: #22223b;
+
+}
