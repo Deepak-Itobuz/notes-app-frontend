@@ -1,19 +1,14 @@
 const addBtn = document.querySelector(".add-button");
-
-
 const editBtn = document.querySelectorAll(".edit-button");
 const deleteBtn = document.querySelectorAll(".delete-button");
-
 const checkBtn = document.querySelector(".check-button");
 const saveBtn = document.querySelector(".save-button");
-
 const searchBtn = document.querySelector(".search-button");
 const closeBtn = document.querySelector(".close-button");
 const input = document.querySelector(".write-note");
 const editInput = document.querySelector(".edit-note");
 const notesBox = document.querySelector(".notes");
 const notesCount = document.querySelector(".note-count");
-
 const listNote = document.querySelector(".note-count");
 
 async function get() {
