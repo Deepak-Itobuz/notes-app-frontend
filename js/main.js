@@ -4,13 +4,14 @@ const deleteBtn = document.querySelectorAll(".delete-button");
 const checkBtn = document.querySelector(".check-button");
 const saveBtn = document.querySelector(".save-button");
 const searchBtn = document.querySelector(".search-button");
+const searchInput = document.querySelector(".search-input");
 const closeBtn = document.querySelector(".close-button");
 const input = document.querySelector(".write-note");
 const editInput = document.querySelector(".edit-note");
 const notesBox = document.querySelector(".notes");
 const notesCount = document.querySelector(".note-count");
-const listNote = document.querySelector(".note-count");
 const statusBar = document.querySelector(".status");
+const searchResult = document.querySelector(".search-result");
 
 async function get() {
   let i = 0;
@@ -111,11 +112,17 @@ async function updateData(oldData, newData) {
   statusBar.innerHTML = response[0].message
   notesBox.innerHTML = "";
   get();
+  lastUpdated();
 }
 
 addBtn.addEventListener("click", () => {
   add();
 });
+
+async function lastUpdated(){
+
+}
+
 
 get();
 
@@ -160,6 +167,32 @@ notesBox.addEventListener('click', (e) => {
   }
   else if (e.target.classList.contains('fa-trash')) {
     deleteData(e.target.parentElement.parentElement.dataset.id)
+  }
+
+})
+
+
+searchBtn.addEventListener('click', ()=>{
+
+  let searchNumber=0;
+  console.log(searchInput.value);
+  searchResult.innerHTML="";
+
+  const listNoteText = document.querySelectorAll(".list-note p");
+  for(let j=0;j<listNoteText.length;j++){
+      if((listNoteText[j].innerHTML).includes(searchInput.value)){
+        let resultFound = document.createElement('li');
+        resultFound.classList.add('result-found');
+        resultFound.innerHTML = listNoteText[j].innerHTML;
+        console.log(listNoteText[j].innerHTML);
+        searchResult.appendChild(resultFound);
+        searchNumber++;
+
+      }
+  }
+  
+  if(searchNumber === 0){
+    searchResult.innerHTML = "No such note found!";
   }
 
 })

@@ -17,9 +17,28 @@
 </head>
 
 <body>
-  <nav class=" text-white d-flex px-5 justify-content-center justify-content-md-start align-items-center py-4">
+  <nav class=" text-white d-flex px-5 justify-content-center justify-content-md-between align-items-center py-4">
     <h1>My notes</h1>
-    <!-- <i class="fas fa-solid fa-magnifying-glass"></i> -->
+    <button class="border rounded-circle px-2 fs-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+      aria-controls="offcanvasRight"> <i class="fas fa-solid fa-magnifying-glass"></i>
+    </button>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Search your Note Here</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body d-flex flex-column">
+        <form class="search d-flex flex-column gap-4">
+          <label for="note" class="fs-2">Type what to search...</label>
+          <input type="text" class="p-3 search-input">
+          <div class="mb-4">
+            <a class="border p-2 text-decoration-none search-button">Search</a>
+          </div>
+        </form>
+        <ul class="search-result d-flex flex-column w-100 gap-2"></ul>
+      </div>
+    </div>
   </nav>
 
   <section class="notes-mobile px-4 align-items-center d-flex flex-column">
@@ -43,10 +62,10 @@
     </button>
 
     <textarea name="input-note" id="" cols="30" rows="10" class="write-note d-none top-0 bottom-0 w-75 fs-3  p-5 my-5"
-    placeholder="Add your note here..."></textarea>
-  <textarea name="input-note" id="" cols="30" rows="10" class="edit-note d-none top-0 bottom-0 w-75 fs-3 p-5 my-5"
-    placeholder="Add your note here..."></textarea>
- 
+      placeholder="Add your note here..."></textarea>
+    <textarea name="input-note" id="" cols="30" rows="10" class="edit-note d-none top-0 bottom-0 w-75 fs-3 p-5 my-5"
+      placeholder="Add your note here..."></textarea>
+
   </section>
 
   <script src="js/main.js"></script>

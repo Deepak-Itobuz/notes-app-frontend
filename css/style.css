@@ -3,7 +3,7 @@ body {
   background-color: #4a4e69;
 }
 
-nav{
+nav {
   background-color: #22223b;
 }
 .add-button {
@@ -11,8 +11,8 @@ nav{
   bottom: 10%;
   left: 82%;
   z-index: 3;
-  color:  #22223b;
-  background-color: #ffffff ;
+  color: #22223b;
+  background-color: #ffffff;
 }
 
 textarea {
@@ -41,7 +41,10 @@ textarea {
   background-color: #22223b;
 }
 
-.save-button:hover ,.close-button:hover ,.check-button:hover , .add-button:hover  {
+.save-button:hover,
+.close-button:hover,
+.check-button:hover,
+.add-button:hover {
   scale: 1.2;
   transition: 0.8s;
 }
@@ -63,9 +66,9 @@ textarea {
   align-items: center;
   border-radius: 3mm;
   box-shadow: inset 0 0 0 0 #4a4e69;
-  transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   max-height: 150px;
-  gap:1rem
+  gap: 1rem;
 }
 
 .list-note p {
@@ -75,7 +78,6 @@ textarea {
   overflow: scroll;
   margin: 0;
 }
-
 
 .list-note:hover {
   background-color: #4a4e69;
@@ -90,7 +92,7 @@ textarea {
   content: "Edit";
 }
 
-.notes{
+.notes {
   background: transparent;
   padding: 2rem;
   display: flex;
@@ -98,19 +100,18 @@ textarea {
 }
 
 .notes-mobile {
-  height: 100%;
-  overflow-y: scroll;
-
+  /* height: 100%; */
+  overflow: auto;
 }
 
 .write-note {
-  position: absolute;
+  position: fixed;
   background-color: whitesmoke;
   z-index: 2;
 }
 
 .edit-note {
-  position: absolute;
+  position: fixed;
   background-color: whitesmoke;
   z-index: 2;
 }
@@ -132,6 +133,13 @@ textarea {
 
 .delete-button:hover {
   background-color: #ffffff;
-    color: #22223b;
+  color: #22223b;
+}
 
+.result-found {
+  list-style: none;
+  border-radius: 3mm;
+  padding: 1rem;
+  background-color:  #22223b;
+  color: #ffffff;
 }
