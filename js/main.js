@@ -13,6 +13,10 @@ const notesCount = document.querySelector(".note-count");
 const statusBar = document.querySelector(".status");
 const searchResult = document.querySelector(".search-result");
 const searchMain = document.querySelector(".search-main");
+const viewSelect = document.querySelector(".view-select");
+const view = document.querySelectorAll(".view-list option");
+const viewList = document.querySelector(".view-list");
+const viewGrid = document.querySelector(".view-grid");
 
 async function get() {
   let i = 0;
@@ -74,6 +78,7 @@ async function postData() {
     alert("field cannot be empty")
   notesBox.innerHTML = "";
   get();
+  setTimeout(renderStatus , 2000);
 }
 
 async function deleteData(data) {
@@ -96,6 +101,7 @@ async function deleteData(data) {
   statusBar.innerHTML = response[0].message;
   notesBox.innerHTML = "";
   get();
+  setTimeout(renderStatus , 2000);
 }
 
 async function updateData(oldData, newData) {
@@ -115,7 +121,7 @@ async function updateData(oldData, newData) {
   statusBar.innerHTML = response[0].message
   notesBox.innerHTML = "";
   get();
-  lastUpdated();
+  setTimeout(renderStatus , 2000);
 }
 
 addBtn.addEventListener("click", () => {
@@ -211,3 +217,38 @@ searchBtn.addEventListener('click', ()=>{
 
 })
 
+
+function renderStatus(){
+  statusBar.innerHTML = "Hey there, add a note."
+  let opacity = 0;
+      function fade() {
+         if (opacity >= 1) {
+            return;
+         }
+         opacity += 0.01;
+         statusBar.style.opacity = opacity;
+         requestAnimationFrame(fade);
+      }
+      requestAnimationFrame(fade);
+}
+
+
+// <<<< to be done grid and list view >>>>>>
+
+// function viewNotes(){
+// let viewValue =viewSelect.options[viewSelect.selectedIndex];
+// if(viewValue.classList.contains('view-list'))
+// console.log("list1");
+// else if (viewValue.classList.contains('view-grid'))
+// console.log("grid");
+// }
+// viewNotes();
+// console.log(viewList );
+// viewList.addEventListener('click',()=>{
+//   console.log("5");
+// })
+// viewGrid.addEventListener('click',()=>{
+//   console.log(2);
+// })
+
+// <<<< to be done grid and list view >>>>>>
