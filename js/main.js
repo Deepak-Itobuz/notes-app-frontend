@@ -12,6 +12,7 @@ const notesBox = document.querySelector(".notes");
 const notesCount = document.querySelector(".note-count");
 const statusBar = document.querySelector(".status");
 const searchResult = document.querySelector(".search-result");
+const searchMain = document.querySelector(".search-main");
 
 async function get() {
   let i = 0;
@@ -25,6 +26,8 @@ async function get() {
     let oldNote = document.createElement("li");
     oldNote.classList.add("list-note");
     oldNote.dataset.id = targetData[j]._id;
+    let idNote = "index"+j;
+    oldNote.setAttribute('id' , idNote )
     let content = document.createElement('p');
     content.innerHTML = targetData[j].notes;
     let buttonTrash = document.createElement('button');
@@ -177,12 +180,16 @@ searchBtn.addEventListener('click', ()=>{
   let searchNumber=0;
   console.log(searchInput.value);
   searchResult.innerHTML="";
-
+  const listNote = document.querySelectorAll(".list-note");
   const listNoteText = document.querySelectorAll(".list-note p");
   for(let j=0;j<listNoteText.length;j++){
       if((listNoteText[j].innerHTML).includes(searchInput.value)){
-        let resultFound = document.createElement('li');
+        let resultFound = document.createElement('a');
+        let setId = "#index"+j;
+        resultFound.setAttribute('href' , setId )
         resultFound.classList.add('result-found');
+        // resultFound.addAttribute('data-bs-toggle','offcanvas')
+       
         resultFound.innerHTML = listNoteText[j].innerHTML;
         console.log(listNoteText[j].innerHTML);
         searchResult.appendChild(resultFound);
@@ -190,6 +197,11 @@ searchBtn.addEventListener('click', ()=>{
 
       }
   }
+
+  searchResult.querySelectorAll('a').forEach(element => {
+    element.onclick = () =>{
+    offcanvasRight.classList.remove('show');
+}});
   
   if(searchNumber === 0){
     searchResult.innerHTML = "No such note found!";
@@ -197,3 +209,6 @@ searchBtn.addEventListener('click', ()=>{
 
 })
 
+// searchMain.addEventListener('click' , ()=>{
+
+// } )
