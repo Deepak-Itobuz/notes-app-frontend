@@ -151,3 +151,22 @@ textarea {
   border-radius: 1mm;
 }
 
+.confirm-delete {
+  height: 100vh;
+  width: 100vw;
+  backdrop-filter: blur(10px);
+}
+
+.delete-box {
+  /* padding: 5rem; */
+ 
+ background-color: white;
+  border-radius: 2mm;
+  box-shadow: 2px 2px 5px #22223b ;
+}
+
+.delete-box button{
+  color: white;
+  background-color: #22223b;
+  border-radius: 2mm;
+}

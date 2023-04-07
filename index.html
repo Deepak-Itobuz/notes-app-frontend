@@ -50,8 +50,8 @@
 
   <section class="notes-mobile px-4 align-items-center d-flex flex-column">
     <div class="d-flex justify-content-center gap-5">
-      <div class="note-number  fs-1 py-2 "><span class="note-count ">0</span> Notes</div>
-      <div class="status text-white fs-1 py-2 ">Hey there, add a note.</div>
+      <div class="note-number  fs-2 py-2 "><span class="note-count ">0</span> Notes</div>
+      <div class="status text-white fs-2 py-2 ">Hey there, add a note.</div>
     </div>
     <ul class="notes d-flex flex-column gap-3 list-unstyled col-md-6 fs-4">
     </ul>
@@ -72,7 +72,15 @@
       placeholder="Add your note here..."></textarea>
     <textarea name="input-note" id="" cols="30" rows="10" class="edit-note d-none top-0 bottom-0 w-75 fs-3 p-5 my-5"
       placeholder="Add your note here..."></textarea>
-
+    <div class="position-fixed d-none  confirm-delete d-flex align-items-center justify-content-center"> 
+      <div class="delete-box d-flex flex-column gap-4 p-5">
+        <h3>Confirm delete?</h3>
+        <div class="d-flex gap-3">
+          <button class="yes-delete px-3 py-2">Yes</button>
+        <button class="no-delete px-3 py-2">No</button>
+        </div>
+    </div> 
+  </div>
   </section>
 
   <script src="js/main.js"></script>

@@ -17,6 +17,9 @@ const viewSelect = document.querySelector(".view-select");
 const view = document.querySelectorAll(".view-list option");
 const viewList = document.querySelector(".view-list");
 const viewGrid = document.querySelector(".view-grid");
+const confirmDelete = document.querySelector(".confirm-delete");
+const yesBtn = document.querySelector(".yes-delete");
+const noBtn = document.querySelector(".no-delete");
 
 async function get() {
   let i = 0;
@@ -171,13 +174,32 @@ notesBox.addEventListener('click', (e) => {
     }
   }
   else if (e.target.classList.contains('delete-button')) {
-    deleteData(e.target.parentElement.dataset.id)
-
+    // let confirmData = confirm("Confirm delete?")
+    // if(confirmData === true){
+      confirmDelete.classList.remove('d-none');
+      yesBtn.onclick= () =>{
+        deleteData(e.target.parentElement.dataset.id)
+        confirmDelete.classList.add('d-none');
+      }
+      noBtn.onclick= () =>{
+        confirmDelete.classList.add('d-none');
+      }
+      
+    
   }
   else if (e.target.classList.contains('fa-trash')) {
-    deleteData(e.target.parentElement.parentElement.dataset.id)
-  }
 
+    confirmDelete.classList.remove('d-none');
+      yesBtn.onclick= () =>{
+        deleteData(e.target.parentElement.parentElement.dataset.id)
+        confirmDelete.classList.add('d-none');
+      }
+      noBtn.onclick= () =>{
+        confirmDelete.classList.add('d-none');
+      }
+    
+  
+  }
 })
 
 
