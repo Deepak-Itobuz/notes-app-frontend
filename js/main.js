@@ -180,10 +180,10 @@ searchBtn.addEventListener('click', ()=>{
   let searchNumber=0;
   console.log(searchInput.value);
   searchResult.innerHTML="";
-  const listNote = document.querySelectorAll(".list-note");
+  // const listNote = document.querySelectorAll(".list-note");
   const listNoteText = document.querySelectorAll(".list-note p");
   for(let j=0;j<listNoteText.length;j++){
-      if((listNoteText[j].innerHTML).includes(searchInput.value)){
+      if((listNoteText[j].innerHTML.toLowerCase()).includes(searchInput.value.toLowerCase())){
         let resultFound = document.createElement('a');
         let setId = "#index"+j;
         resultFound.setAttribute('href' , setId )
@@ -201,6 +201,8 @@ searchBtn.addEventListener('click', ()=>{
   searchResult.querySelectorAll('a').forEach(element => {
     element.onclick = () =>{
     offcanvasRight.classList.remove('show');
+    searchInput.value="";
+    searchResult.innerHTML="";
 }});
   
   if(searchNumber === 0){
@@ -209,6 +211,3 @@ searchBtn.addEventListener('click', ()=>{
 
 })
 
-// searchMain.addEventListener('click' , ()=>{
-
-// } )

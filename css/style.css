@@ -144,3 +144,10 @@ textarea {
   color: #ffffff;
   text-decoration: none;
 }
+
+.search-button {
+  background-color:  #22223b;
+  color: white;
+  border-radius: 1mm;
+}
+
