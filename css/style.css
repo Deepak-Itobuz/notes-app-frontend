@@ -1,10 +1,10 @@
 body {
-  height: 100vh;
   background-color: #4a4e69;
 }
 
 nav {
   background-color: #22223b;
+  z-index: 2;
 }
 .add-button {
   position: fixed;
@@ -67,14 +67,17 @@ textarea {
   border-radius: 3mm;
   box-shadow: inset 0 0 0 0 #4a4e69;
   transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  max-height: 150px;
+  /* max-height: 6rem; */
   gap: 1rem;
+  /* overflow: scroll; */
 }
 
 .list-note p {
   display: flex;
   align-items: center;
-  height: 100%;
+  height: 6rem;
+  /* height: 100%; */
+  /* width: 100%; */
   overflow: scroll;
   margin: 0;
 }

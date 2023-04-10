@@ -28,7 +28,7 @@ async function get() {
       return data.json();
     })
     .catch((err) => console.log(err));
-  let targetData = JSON.parse(response[0].data)
+  let targetData = JSON.parse(response.data)
   for (let j = 0; j < targetData.length; j++) {
     let oldNote = document.createElement("li");
     oldNote.classList.add("list-note");
@@ -74,8 +74,8 @@ async function postData() {
         return data.json();
       })
       .catch((err) => console.log(err));
-    // console.log(response[0].message);
-    statusBar.innerHTML = response[0].message
+    // console.log(response.message);
+    statusBar.innerHTML = response.message
   }
   else
     alert("field cannot be empty")
@@ -101,7 +101,7 @@ async function deleteData(data) {
     })
     .catch((err) => console.log(err));
   // console.log(response[0].message);
-  statusBar.innerHTML = response[0].message;
+  statusBar.innerHTML = response.message;
   notesBox.innerHTML = "";
   get();
   setTimeout(renderStatus , 2000);
@@ -121,7 +121,7 @@ async function updateData(oldData, newData) {
     })
     .catch((err) => console.log(err));
   // console.log(response[0].message);
-  statusBar.innerHTML = response[0].message
+  statusBar.innerHTML = response.message
   notesBox.innerHTML = "";
   get();
   setTimeout(renderStatus , 2000);
