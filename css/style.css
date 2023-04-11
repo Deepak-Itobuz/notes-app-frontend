@@ -76,8 +76,6 @@ textarea {
   display: flex;
   align-items: center;
   height: 6rem;
-  /* height: 100%; */
-  /* width: 100%; */
   overflow: scroll;
   margin: 0;
 }

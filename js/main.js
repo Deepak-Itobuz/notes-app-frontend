@@ -33,8 +33,8 @@ async function get() {
     let oldNote = document.createElement("li");
     oldNote.classList.add("list-note");
     oldNote.dataset.id = targetData[j]._id;
-    let idNote = "index"+j;
-    oldNote.setAttribute('id' , idNote )
+    let idNote = "index" + j;
+    oldNote.setAttribute('id', idNote)
     let content = document.createElement('p');
     content.innerHTML = targetData[j].notes;
     let buttonTrash = document.createElement('button');
@@ -81,7 +81,7 @@ async function postData() {
     alert("field cannot be empty")
   notesBox.innerHTML = "";
   get();
-  setTimeout(renderStatus , 2000);
+  setTimeout(renderStatus, 2000);
 }
 
 async function deleteData(data) {
@@ -104,7 +104,7 @@ async function deleteData(data) {
   statusBar.innerHTML = response.message;
   notesBox.innerHTML = "";
   get();
-  setTimeout(renderStatus , 2000);
+  setTimeout(renderStatus, 2000);
 }
 
 async function updateData(oldData, newData) {
@@ -124,14 +124,14 @@ async function updateData(oldData, newData) {
   statusBar.innerHTML = response.message
   notesBox.innerHTML = "";
   get();
-  setTimeout(renderStatus , 2000);
+  setTimeout(renderStatus, 2000);
 }
 
 addBtn.addEventListener("click", () => {
   add();
 });
 
-async function lastUpdated(){
+async function lastUpdated() {
 
 }
 
@@ -176,82 +176,83 @@ notesBox.addEventListener('click', (e) => {
   else if (e.target.classList.contains('delete-button')) {
     // let confirmData = confirm("Confirm delete?")
     // if(confirmData === true){
-      confirmDelete.classList.remove('d-none');
-      yesBtn.onclick= () =>{
-        deleteData(e.target.parentElement.dataset.id)
-        confirmDelete.classList.add('d-none');
-      }
-      noBtn.onclick= () =>{
-        confirmDelete.classList.add('d-none');
-      }
-      
-    
+    confirmDelete.classList.remove('d-none');
+    yesBtn.onclick = () => {
+      deleteData(e.target.parentElement.dataset.id)
+      confirmDelete.classList.add('d-none');
+    }
+    noBtn.onclick = () => {
+      confirmDelete.classList.add('d-none');
+    }
+
+
   }
   else if (e.target.classList.contains('fa-trash')) {
 
     confirmDelete.classList.remove('d-none');
-      yesBtn.onclick= () =>{
-        deleteData(e.target.parentElement.parentElement.dataset.id)
-        confirmDelete.classList.add('d-none');
-      }
-      noBtn.onclick= () =>{
-        confirmDelete.classList.add('d-none');
-      }
-    
-  
+    yesBtn.onclick = () => {
+      deleteData(e.target.parentElement.parentElement.dataset.id)
+      confirmDelete.classList.add('d-none');
+    }
+    noBtn.onclick = () => {
+      confirmDelete.classList.add('d-none');
+    }
+
+
   }
 })
 
 
-searchBtn.addEventListener('click', ()=>{
+searchBtn.addEventListener('click', () => {
 
-  let searchNumber=0;
+  let searchNumber = 0;
   console.log(searchInput.value);
-  searchResult.innerHTML="";
+  searchResult.innerHTML = "";
   // const listNote = document.querySelectorAll(".list-note");
   const listNoteText = document.querySelectorAll(".list-note p");
-  for(let j=0;j<listNoteText.length;j++){
-      if((listNoteText[j].innerHTML.toLowerCase()).includes(searchInput.value.toLowerCase())){
-        let resultFound = document.createElement('a');
-        let setId = "#index"+j;
-        resultFound.setAttribute('href' , setId )
-        resultFound.classList.add('result-found');
-        // resultFound.addAttribute('data-bs-toggle','offcanvas')
-       
-        resultFound.innerHTML = listNoteText[j].innerHTML;
-        console.log(listNoteText[j].innerHTML);
-        searchResult.appendChild(resultFound);
-        searchNumber++;
+  for (let j = 0; j < listNoteText.length; j++) {
+    if ((listNoteText[j].innerHTML.toLowerCase()).includes(searchInput.value.toLowerCase())) {
+      let resultFound = document.createElement('a');
+      let setId = "#index" + j;
+      resultFound.setAttribute('href', setId)
+      resultFound.classList.add('result-found');
+      // resultFound.addAttribute('data-bs-toggle','offcanvas')
 
-      }
+      resultFound.innerHTML = listNoteText[j].innerHTML;
+      console.log(listNoteText[j].innerHTML);
+      searchResult.appendChild(resultFound);
+      searchNumber++;
+
+    }
   }
 
   searchResult.querySelectorAll('a').forEach(element => {
-    element.onclick = () =>{
-    offcanvasRight.classList.remove('show');
-    searchInput.value="";
-    searchResult.innerHTML="";
-}});
-  
-  if(searchNumber === 0){
+    element.onclick = () => {
+      offcanvasRight.classList.remove('show');
+      searchInput.value = "";
+      searchResult.innerHTML = "";
+    }
+  });
+
+  if (searchNumber === 0) {
     searchResult.innerHTML = "No such note found!";
   }
 
 })
 
 
-function renderStatus(){
+function renderStatus() {
   statusBar.innerHTML = "Hey there, add a note."
   let opacity = 0;
-      function fade() {
-         if (opacity >= 1) {
-            return;
-         }
-         opacity += 0.01;
-         statusBar.style.opacity = opacity;
-         requestAnimationFrame(fade);
-      }
-      requestAnimationFrame(fade);
+  function fade() {
+    if (opacity >= 1) {
+      return;
+    }
+    opacity += 0.01;
+    statusBar.style.opacity = opacity;
+    requestAnimationFrame(fade);
+  }
+  requestAnimationFrame(fade);
 }
 
 
