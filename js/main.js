@@ -74,7 +74,6 @@ async function postData() {
         return data.json();
       })
       .catch((err) => console.log(err));
-    // console.log(response.message);
     statusBar.innerHTML = response.message
   }
   else
@@ -100,7 +99,6 @@ async function deleteData(data) {
       return data.json();
     })
     .catch((err) => console.log(err));
-  // console.log(response[0].message);
   statusBar.innerHTML = response.message;
   notesBox.innerHTML = "";
   get();
@@ -120,7 +118,6 @@ async function updateData(oldData, newData) {
       return data.json();
     })
     .catch((err) => console.log(err));
-  // console.log(response[0].message);
   statusBar.innerHTML = response.message
   notesBox.innerHTML = "";
   get();
@@ -174,8 +171,6 @@ notesBox.addEventListener('click', (e) => {
     }
   }
   else if (e.target.classList.contains('delete-button')) {
-    // let confirmData = confirm("Confirm delete?")
-    // if(confirmData === true){
     confirmDelete.classList.remove('d-none');
     yesBtn.onclick = () => {
       deleteData(e.target.parentElement.dataset.id)
@@ -208,7 +203,6 @@ searchBtn.addEventListener('click', () => {
   let searchNumber = 0;
   console.log(searchInput.value);
   searchResult.innerHTML = "";
-  // const listNote = document.querySelectorAll(".list-note");
   const listNoteText = document.querySelectorAll(".list-note p");
   for (let j = 0; j < listNoteText.length; j++) {
     if ((listNoteText[j].innerHTML.toLowerCase()).includes(searchInput.value.toLowerCase())) {
@@ -216,13 +210,10 @@ searchBtn.addEventListener('click', () => {
       let setId = "#index" + j;
       resultFound.setAttribute('href', setId)
       resultFound.classList.add('result-found');
-      // resultFound.addAttribute('data-bs-toggle','offcanvas')
-
       resultFound.innerHTML = listNoteText[j].innerHTML;
       console.log(listNoteText[j].innerHTML);
       searchResult.appendChild(resultFound);
       searchNumber++;
-
     }
   }
 
@@ -233,11 +224,9 @@ searchBtn.addEventListener('click', () => {
       searchResult.innerHTML = "";
     }
   });
-
   if (searchNumber === 0) {
     searchResult.innerHTML = "No such note found!";
   }
-
 })
 
 
@@ -255,23 +244,3 @@ function renderStatus() {
   requestAnimationFrame(fade);
 }
 
-
-// <<<< to be done grid and list view >>>>>>
-
-// function viewNotes(){
-// let viewValue =viewSelect.options[viewSelect.selectedIndex];
-// if(viewValue.classList.contains('view-list'))
-// console.log("list1");
-// else if (viewValue.classList.contains('view-grid'))
-// console.log("grid");
-// }
-// viewNotes();
-// console.log(viewList );
-// viewList.addEventListener('click',()=>{
-//   console.log("5");
-// })
-// viewGrid.addEventListener('click',()=>{
-//   console.log(2);
-// })
-
-// <<<< to be done grid and list view >>>>>>

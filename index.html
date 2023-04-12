@@ -17,29 +17,28 @@
 </head>
 
 <body>
-  <nav class=" w-100 text-white d-flex px-5 justify-content-center justify-content-md-between align-items-center py-4">
+  <nav class="w-100 text-white d-flex px-5 justify-content-center justify-content-md-between align-items-center py-4">
     <h1>My Notes</h1>
-   <div>
-    <!-- <select name="view" class="view-select">        to be done for grid and list view
-      <option value="list" class="view-list">List</option>
-      <option value="grid" class="view-grid">Grid</option>
-    </select> --> 
-    <button class="border rounded-circle px-2 fs-3 search-main" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
-    aria-controls="offcanvasRight"> <i class="fas fa-solid fa-magnifying-glass"></i>
-  </button>
-   </div>
+    <div>
+      <button class="border rounded-circle px-2 fs-3 search-main" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+        <i class="fas fa-solid fa-magnifying-glass"></i>
+      </button>
+    </div>
 
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasRightLabel">Search Your Note Here</h5>
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">
+          Search Your Note Here
+        </h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body d-flex flex-column">
         <form class="search d-flex flex-column gap-4">
           <label for="note" class="fs-2">Type what to search...</label>
-          <input type="text" class="p-3 search-input">
+          <input type="text" class="p-3 search-input" />
           <div class="mb-4">
-            <a class=" py-3 px-3 text-decoration-none search-button">Search</a>
+            <a class="py-3 px-3 text-decoration-none search-button">Search</a>
           </div>
         </form>
         <ul class="search-result d-flex flex-column w-100 gap-2"></ul>
@@ -48,38 +47,39 @@
   </nav>
 
   <section class="notes-mobile px-4 align-items-center d-flex flex-column">
-    <div class=" d-flex justify-content-center gap-5">
-      <div class="note-number  fs-2 py-2 "><span class="note-count ">0</span> Notes</div>
-      <div class="status text-white fs-2 py-2 ">Hey there, add a note.</div>
+    <div class="d-flex justify-content-center gap-5">
+      <div class="note-number fs-2 py-2">
+        <span class="note-count">0</span> Notes
+      </div>
+      <div class="status text-white fs-2 py-2">Hey there, add a note.</div>
     </div>
-    <ul class="notes d-flex flex-column gap-3 list-unstyled col-md-6 fs-4">
-    </ul>
-    <button class="add-button  border rounded-circle fs-1 px-3 ">
+    <ul class="notes d-flex flex-column gap-3 list-unstyled col-md-6 fs-4"></ul>
+    <button class="add-button border rounded-circle fs-1 px-3">
       <i class="add-icon fas fa-solid fa-plus"></i>
     </button>
-    <button class="check-button  border rounded-circle fs-1 px-3 text-white d-none">
+    <button class="check-button border rounded-circle fs-1 px-3 text-white d-none">
       <i class="check-icon fas fa-solid fa-check"></i>
     </button>
-    <button class="save-button  border rounded-circle fs-1 px-3 text-white d-none">
+    <button class="save-button border rounded-circle fs-1 px-3 text-white d-none">
       <i class="save-icon fas fa-solid fa-save"></i>
     </button>
-    <button class="close-button rounded-circle  px-2 fs-1 px-3 d-none">
-      <i class=" fas fa-regular fa-xmark"></i>
+    <button class="close-button rounded-circle px-2 fs-1 px-3 d-none">
+      <i class="fas fa-regular fa-xmark"></i>
     </button>
 
-    <textarea name="input-note" id="" cols="30" rows="10" class="write-note d-none top-0 bottom-0 w-75 fs-3  p-5 my-5"
+    <textarea name="input-note" id="" cols="30" rows="10" class="write-note d-none top-0 bottom-0 w-75 fs-3 p-5 my-5"
       placeholder="Add your note here..."></textarea>
     <textarea name="input-note" id="" cols="30" rows="10" class="edit-note d-none top-0 bottom-0 w-75 fs-3 p-5 my-5"
       placeholder="Add your note here..."></textarea>
-    <div class="position-fixed d-none  confirm-delete d-flex align-items-center justify-content-center"> 
+    <div class="position-fixed d-none confirm-delete d-flex align-items-center justify-content-center">
       <div class="delete-box d-flex flex-column gap-4 p-5">
         <h3>Confirm Delete?</h3>
         <div class="d-flex gap-3">
           <button class="yes-delete px-3 py-2">Yes</button>
-        <button class="no-delete px-3 py-2">No</button>
+          <button class="no-delete px-3 py-2">No</button>
         </div>
-    </div> 
-  </div>
+      </div>
+    </div>
   </section>
 
   <script src="js/main.js"></script>
