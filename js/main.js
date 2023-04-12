@@ -77,7 +77,7 @@ async function postData() {
     statusBar.innerHTML = response.message
   }
   else
-    alert("field cannot be empty")
+    alert("Field cannot be empty")
   notesBox.innerHTML = "";
   get();
   setTimeout(renderStatus, 2000);
